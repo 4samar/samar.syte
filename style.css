@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: white;
+    overflow: hidden; /* Чтобы не было прокрутки из-за размытого фона */
+}
+
+/* Фон с размытием 20% (примерно 10-15px) */
+.bg-image {
+    position: fixed;
+    top: -10%;
+    left: -10%;
+    width: 120%;
+    height: 120%;
+    background: url('background.jpg') no-repeat center center;
+    background-size: cover;
+    filter: blur(15px) brightness(0.8); /* Размытие фона */
+    z-index: -1;
+}
+
+.container {
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    z-index: 1;
+}
+
+/* Аватарка */
+.avatar-container {
+    margin-bottom: 20px;
+}
+
+.avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Круглая форма */
+    object-fit: cover;
+    border: 3px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.nickname {
+    display: block;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+.description {
+    font-size: 16px;
+    opacity: 0.9;
+    margin-bottom: 40px;
+    line-height: 1.4;
+}
+
+/* Кнопки-вкладки */
+.links-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.link-btn {
+    /* Белый цвет с прозрачностью 30% */
+    background: rgba(255, 255, 255, 0.3); 
+    backdrop-filter: blur(5px); /* Легкое размытие внутри кнопки */
+    color: white;
+    text-decoration: none;
+    padding: 18px;
+    border-radius: 15px;
+    font-size: 18px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Эффект при нажатии/наведении */
+.link-btn:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: scale(1.02);
+}
+
+.link-btn:active {
+    transform: scale(0.98);
+}
